@@ -1,0 +1,73 @@
+{% extends 'star/layout.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+    <script type="text/javascript">
+    var d = document.getElementById("nav-quiz-1");
+    d.className += " active";
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 20px">
+    <h1> QUIZ: IP Address </h1>
+</div>
+
+<form class="form-horizontal" role="form" method="POST" action="/3/">
+    {% csrf_token %}
+    {% for q in questions %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Question {{ forloop.counter }}: {{ q.0 }}</h3></div>
+        <div class="panel-body">
+            <div class="form-group">
+                {% for a in q.1 %}
+                <div class="radio">
+                    <label class="cr-styled" for="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">
+                        <input type="radio" id="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" name="q{{ forloop.parentloop.counter }}" value="{{ forloop.counter }}">
+                        <i class="fa"></i>
+                        {{ a }}
+                    </label>
+                </div>
+                {% endfor %}
+                <div class="m-t-20" style="padding-left: 20px">
+                    <button type="button" id="q{{ forloop.counter}}-hint-btn" class="btn btn-sm btn-warning btn-rounded m-b-5">Show Hint</button>
+                </div>
+                <div class="panel panel-color panel-warning" id="q{{ forloop.counter}}-hint" style="display: none;">
+                <!--<div class="panel panel-color panel-warning">-->
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Hint!</h3>
+                    </div>
+                    <div class="panel-body" >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div> <!-- form-group -->
+        </div> <!-- panel-body -->
+    </div>
+
+
+    {% endfor %}
+
+    <center>
+        <input type="submit" class="btn btn-lg btn-success  m-b-5" value="Submit" />
+    </center>
+</form>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function(){
+        {% for q in questions %}
+            $('#q{{ forloop.counter}}-hint-btn').click(function(){
+                $(this).css('display', 'none');
+                $('#q{{ forloop.counter}}-hint').css('display', 'block');
+
+            });
+                
+        {% endfor %}
+});
+</script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'star/layout.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+<script type="text/javascript">
+var d = document.getElementById("nav-vid-1");
+d.className += " active";
+</script>
+{% endblock %}
+
+{% block content %}
+
+<h1>Video Lesson 1</h1>
+
+<iframe src="https://h5p.org/h5p/embed/36600" width="1090" height="674" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+<div class="row m-t-10 m-b-5">
+    <ul class="pager">
+        <li>
+        <a href="/"><i class="fa fa-long-arrow-left"></i> Previous</a>
+        </li>
+        <li>
+        <a id="sa-quizzes-1">Next <i class="fa fa-long-arrow-right"></i></a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

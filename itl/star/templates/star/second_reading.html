@@ -1,0 +1,90 @@
+{% extends 'star/layout.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+<script type="text/javascript">
+var d = document.getElementById("nav-read-2");
+d.className += " active";
+</script>
+
+<style>
+.tab-pane p {
+    font-size: 16px;
+}
+
+.tab-pane img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0 auto;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h1>Reading Materials 2 </h1>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="tabs-vertical-env">
+            <ul class="nav tabs-vertical">
+                <li class="">
+                <a href="#v-ipaddress" data-toggle="tab" aria-expanded="true">More IP Address</a>
+                </li>
+                <li class="active">
+                <a href="#v-router" data-toggle="tab" aria-expanded="false">Router</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane" id="v-ipaddress">
+                    <h2> What is the Internet?</h2>
+                    <br>
+                    <img src="http://www.ancarb.co.uk/wp-content/uploads/2016/02/How-the-Internet-Works.png">
+                    <br>
+                    <br>
+                    <p>Internet is the global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link devices worldwide. It is a network of networks that consists of private, public, academic, business, and government networks of local to global scope, linked by a broad array of electronic, wireless, and optical networking technologies. The Internet carries an extensive range of information resources and services, such as the inter-linked hypertext documents and applications of the World Wide Web (WWW), electronic mail, telephony, and peer-to-peer networks for file sharing.</p>
+                    <br>
+                    <img src="http://s.hswstatic.com/gif/internet-infrastructure1.gif">
+                    <br>
+                    <br>
+                    <p>Every computer that is connected to the Internet is part of a network, even the one in your home. For example, you may use a modem and dial a local number to connect to an Internet Service Provider (ISP). At work, you may be part of a local area network (LAN), but you most likely still connect to the Internet using an ISP that your company has contracted with. When you connect to your ISP, you become part of their network. The ISP may then connect to a larger network and become part of their network. The Internet is simply a network of networks.</p>
+                    <p>Most large communications companies have their own dedicated backbones connecting various regions. In each region, the company has a Point of Presence (POP). The POP is a place for local users to access the company's network, often through a local phone number or dedicated line. The amazing thing here is that there is no overall controlling network. Instead, there are several high-level networks connecting to each other through Network Access Points or NAPs.</p>
+                </div>
+                <div class="tab-pane active" id="v-router">
+                    <h2>The Function of Router</h2>
+                    <br>
+                    <p>All of these networks rely on NAPs, backbones and <b>routers</b> to talk to each other. What is incredible about this process is that a message can leave one computer and travel halfway across the world through several different networks and arrive at another computer in a fraction of a second!</p>
+                    <img src="https://i.stack.imgur.com/1rFgn.gif">
+                    <p>The routers determine where to send information from one computer to another. Routers are specialized computers that send your messages and those of every other Internet user speeding to their destinations along thousands of pathways. A router has two separate, but related, jobs:</p>
+
+                        <ul style="font-size:16px"><li><span>It ensures that information doesn't go where it's not needed. This is crucial for keeping large volumes of data from clogging the connections of &quot;innocent bystanders.&quot;</span></li><li><span>It makes sure that information does make it to the intended destination.</span></li></ul>
+                        <br>
+
+                        <p>In performing these two jobs, a router is extremely useful in dealing with two separate computer networks. It joins the two networks, passing information from one to the other. It also protects the networks from one another, preventing the traffic on one from unnecessarily spilling over to the other. Regardless of how many networks are attached, the basic operation and function of the router remains the same. Since the Internet is one huge network made up of tens of thousands of smaller networks, its use of routers is an absolute necessity. </p>
+                </div>
+                <div class="tab-pane" id="v-dns">
+                    <h2> What is a DNS?</h2>
+                    <br>
+                    <p>When the Internet was in its infancy, it consisted of a small number of computers hooked together with modems and telephone lines. You could only make connections by providing the IP address of the computer you wanted to establish a link with. For example, a typical IP address might be 216.27.22.162. This was fine when there were only a few hosts out there, but it became unwieldy as more and more systems came online.</p>
+                    <img src="https://1.bp.blogspot.com/-tz64HbH4pPQ/V3y-kzLw8xI/AAAAAAAAAVM/CXNWymh5UxcGbD6h2VIw4mJSD3p9g79zACLcB/s1600/What%2Bis%2BDomain%2BName%2BServer%2Band%2BHow%2BDoes%2Bit%2BWork.png">
+                    <p>The first solution to the problem was a simple text file maintained by the Network Information Center that mapped names to IP addresses. Soon this text file became so large it was too cumbersome to manage. In 1983, the University of Wisconsin created the <b>Domain Name System</b> (DNS), which maps text names to IP addresses automatically. This way you only need to remember <a href="http://www.howstuffworks.com/">www.howstuffworks.com</a>, for example, instead of HowStuffWorks.com's IP address.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row m-t-10 m-b-5">
+    <ul class="pager">
+        <li>
+        <a href="/4"><i class="fa fa-long-arrow-left"></i> Video Lesson 2</a>
+        </li>
+        <li>
+        <a href="/6">Start The Quiz <i class="fa fa-long-arrow-right"></i></a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

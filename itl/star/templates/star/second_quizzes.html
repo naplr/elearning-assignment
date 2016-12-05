@@ -1,0 +1,55 @@
+{% extends 'star/layout.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+    <script type="text/javascript">
+    var d = document.getElementById("nav-quiz-1");
+    d.className += " active";
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 20px">
+    <h1> QUIZ: IP Address </h1>
+</div>
+
+<form class="form-horizontal" role="form" method="POST" action="/3/">
+    {% csrf_token %}
+{% for q in questions %}
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Question {{ forloop.counter }}: {{ q.0 }}</h3></div>
+    <div class="panel-body">
+            <div class="form-group">
+                {% for a in q.1 %}
+                    <div class="radio">
+                        <label class="cr-styled" for="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">
+                            <input type="radio" id="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" name="q{{ forloop.parentloop.counter }}" value="{{ forloop.counter }}">
+                            <i class="fa"></i>
+                            {{ a }}
+                        </label>
+                    </div>
+                    {% endfor %}
+            </div> <!-- form-group -->
+    </div> <!-- panel-body -->
+</div>
+
+
+{% endfor %}
+
+    <center>
+        <input type="submit" class="btn btn-lg btn-success btn-rounded m-b-5" value="Submit" />
+    </center>
+</form>
+
+{% endblock %}
+
+{% block extra_js %}
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--// Your code here-->
+<!--$('#sa-quizzes').trigger('click');-->
+<!--});-->
+<!--</script>-->
+{% endblock %}

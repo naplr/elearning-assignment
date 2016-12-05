@@ -1,0 +1,187 @@
+{% extends 'star/layout.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+<script type="text/javascript">
+    var d = document.getElementById("nav-quiz-1");
+    d.className += " active";
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 20px">
+    <h1> Result - QUIZ: IP Address </h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="mini-stat clearfix">
+            <span class="mini-stat-icon bg-info"><i class="fa fa-usd"></i></span>
+            <div class="mini-stat-info text-right">
+                <span class="counter">15852</span>
+                Total Sales
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="mini-stat clearfix">
+            <span class="mini-stat-icon bg-warning"><i class="fa fa-shopping-cart"></i></span>
+            <div class="mini-stat-info text-right">
+                <span class="counter">956</span>
+                New Orders
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="mini-stat clearfix">
+            <span class="mini-stat-icon bg-pink"><i class="fa fa-user"></i></span>
+            <div class="mini-stat-info text-right">
+                <span class="counter">5210</span>
+                New Users
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="mini-stat clearfix">
+            <span class="mini-stat-icon bg-success"><i class="fa fa-eye"></i></span>
+            <div class="mini-stat-info text-right">
+                <span class="counter">20544</span>
+                Unique Visitors
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        {% if passed %}
+        <div class="panel panel-color panel-success">
+            {% else %}
+            <div class="panel panel-color panel-danger">
+                {% endif %}
+
+                <div class="panel-heading">
+                    <center>
+                        <h3 class="panel-title">Your Statistics</h3>
+                    </center>
+                </div>
+                <div class="panel-body">
+                    <center>
+                        {% if passed %}
+                        <h4> Result: Passed</h4>
+                        {% else %}
+                        <h4> Result: Failed</h4>
+                        {% endif %}
+                        <h4> Total Corrects: {{ total_score }} </h4>
+                        <h4> Score Percent: {{ score_percent }}%</h4>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for q in questions %}
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Question {{ forloop.counter }}: {{ q.0 }}</h3></div>
+            <div class="panel-body">
+                <div class="form-group" >
+                    {% for a in q.1 %}
+                    {% if forloop.counter == q.2 %}
+                    {% if forloop.counter == q.3 %}
+                    <div class="radio has-feedback has-success">
+                        <label class="cr-styled" for="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">
+                            <input type="radio" id="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" name="q{{ forloop.parentloop.counter }}" value="{{ forloop.counter }}" checked disabled>
+                            <i class="fa"></i>
+                            {{ a }}
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </label>
+                    </div>
+                    {% else %}
+                    <div class="radio has-feedback has-error">
+                        <label class="cr-styled" for="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">
+                            <input type="radio" id="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" name="q{{ forloop.parentloop.counter }}" value="{{ forloop.counter }}" checked disabled>
+                            <i class="fa"></i>
+                            {{ a }}
+                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        </label>
+                    </div>
+                    {% endif %}
+                    {% else %}
+                    {% if forloop.counter == q.3 %}
+                    <div class="radio has-feedback has-success">
+                        <label class="cr-styled" for="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">
+                            <input type="radio" id="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" name="q{{ forloop.parentloop.counter }}" value="{{ forloop.counter }}" disabled>
+                            <i class="fa"></i>
+                            {{ a }}
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </label>
+                    </div>
+                    {% else %}
+                    <div class="radio">
+                        <label class="cr-styled" for="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}">
+                            <input type="radio" id="q{{ forloop.parentloop.counter }}a{{ forloop.counter }}" name="q{{ forloop.parentloop.counter }}" value="{{ forloop.counter }}" disabled>
+                            <i class="fa"></i>
+                            {{ a }}
+                        </label>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </div> <!-- form-group -->
+            </div> <!-- panel-body -->
+        </div>
+
+        {% endfor %}
+
+    </div>
+    <div class="row m-t-10 m-b-5">
+        <ul class="pager">
+            {% if passed %}
+        <li>
+        <a href="/2">Learn More from Reading Mateirals!</a>
+        </li>
+            <li>
+            <a href="/4">Go to Video Lesson 2<i class="fa fa-long-arrow-right"></i></a>
+            </li>
+            {% else %}
+            <li>
+            <a href="/3"><i class="fa fa-long-arrow-left"></i> Re-take the Quiz</a>
+            </li>
+            <li>
+            <a href="/2">Go to Reading Materials<i class="fa fa-long-arrow-right"></i></a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    {% endblock %}
+
+    {% block extra_js %}
+    <script>
+$(document).ready(function(){
+        {% if passed %}
+        swal({
+title: "Good job! \n You have passed the quiz with {{ score_percent }}%",
+text: "",
+type: "success",
+showCancelButton: false,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "OK",
+closeOnConfirm: true
+});
+        });
+{% else %}
+swal({
+title: "Sorry :( \n You did not get enough score to pass. ({{ score_percent }}%)",
+text: "",
+type: "error",
+showCancelButton: false,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "OK",
+closeOnConfirm: true
+});
+{% endif %}
+});
+    </script>
+    {% endblock %}

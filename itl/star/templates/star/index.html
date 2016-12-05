@@ -1,0 +1,142 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="img/favicon_1.ico">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'star/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'star/css/bootstrap-reset.css' %}" rel="stylesheet">
+
+    <!--Animation css-->
+    <link href="{% static 'star/css/animate.css' %}" rel="stylesheet">
+
+    <!--Icon-fonts css-->
+    <link href="{% static 'star/assets/font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'star/assets/ionicon/css/ionicons.min.css' %}" rel="stylesheet" />
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="{% static 'star/assets/morris/morris.css' %}">
+
+    <!-- sweet alerts -->
+    <link href="{% static 'star/assets/sweet-alert/sweet-alert.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'star/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'star/css/helper.css' %}" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+
+<body>
+    <!--Main Content Start -->
+
+    <!-- Page Content Start -->
+    <!-- ================== -->
+
+    <div class="wraper container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 m-b-40" style="margin-top: 80px">
+                <center>
+                <h1 style="font-size: 100px">Welcome!</h1>
+                <p class="m-t-30" style="font-size: 32px"><em>This is the first part of an e-learning module: How the Internet work? In this module, you will learn some basic knowledge about the Internet. If you are ready, let' start!</em>
+                </p>
+                <a href="/1"><button class="btn btn-success btn-rounded btn-lg m-t-40 ">Let's Start!</button></a>
+            </center>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content Ends -->
+    <!-- ================== -->
+
+    <!-- Footer Start -->
+    <footer class="footer" style="left:0px">
+        2016 © Napol.
+    </footer>
+    <!-- Footer Ends -->
+
+
+
+    <!--</section>-->
+    <!-- Main Content Ends -->
+
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
+    <script src="{% static 'js/pace.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollTo.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nicescroll.js' %}" type="text/javascript"></script>
+    <script src="{% static 'star/assets/chat/moment-2.2.1.js' %}"></script>
+
+    <!-- Counter-up -->
+    <script src="{% static 'star/js/waypoints.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'star/js/jquery.counterup.min.js' %}" type="text/javascript"></script>
+
+    <!-- EASY PIE CHART JS -->
+    <script src="{% static 'star/assets/easypie-chart/easypiechart.min.js' %}"></script>
+    <script src="{% static 'star/assets/easypie-chart/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'star/assets/easypie-chart/example.js' %}"></script>
+
+
+    <!--C3 Chart-->
+    <script src="{% static 'star/assets/c3-chart/d3.v3.min.js' %}"></script>
+    <script src="{% static 'star/assets/c3-chart/c3.js' %}"></script>
+
+    <!--Morris Chart-->
+    <script src="{% static 'star/assets/morris/morris.min.js' %}"></script>
+    <script src="{% static 'star/assets/morris/raphael.min.js' %}"></script>
+
+    <!-- sparkline -->
+    <script src="{% static 'star/assets/sparkline-chart/jquery.sparkline.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'star/assets/sparkline-chart/chart-sparkline.js' %}" type="text/javascript"></script>
+
+    <!-- sweet alerts -->
+    <script src="{% static 'star/assets/sweet-alert/sweet-alert.min.js' %}"></script>
+    <script src="{% static 'star/assets/sweet-alert/sweet-alert.init.js' %}"></script>
+
+    <script src="{% static 'star/js/jquery.app.js' %}"></script>
+    <!-- Chat -->
+    <script src="{% static 'star/js/jquery.chat.js' %}"></script>
+    <!-- Dashboard -->
+    <script src="{% static 'star/js/jquery.dashboard.js' %}"></script>
+
+    <!-- Todo -->
+    <script src="{% static 'star/js/jquery.todo.js' %}"></script>
+
+
+    <script type="text/javascript">
+        /* ==============================================
+                                                             Counter Up
+                                                             =============================================== */
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
