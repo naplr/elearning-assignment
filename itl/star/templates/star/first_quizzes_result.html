@@ -11,47 +11,47 @@
 {% block content %}
 
 <div style="margin-bottom: 20px">
-    <h1> Result - QUIZ: IP Address </h1>
+    <h1> Result - Quiz 1</h1>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-info"><i class="fa fa-usd"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">15852</span>
-                Total Sales
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-warning"><i class="fa fa-shopping-cart"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">956</span>
-                New Orders
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-pink"><i class="fa fa-user"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">5210</span>
-                New Users
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-success"><i class="fa fa-eye"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">20544</span>
-                Unique Visitors
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="row">-->
+    <!--<div class="col-md-3">-->
+        <!--<div class="mini-stat clearfix">-->
+            <!--<span class="mini-stat-icon bg-info"><i class="fa fa-usd"></i></span>-->
+            <!--<div class="mini-stat-info text-right">-->
+                <!--<span class="counter">15852</span>-->
+                <!--Total Sales-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+        <!--<div class="mini-stat clearfix">-->
+            <!--<span class="mini-stat-icon bg-warning"><i class="fa fa-shopping-cart"></i></span>-->
+            <!--<div class="mini-stat-info text-right">-->
+                <!--<span class="counter">956</span>-->
+                <!--New Orders-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+        <!--<div class="mini-stat clearfix">-->
+            <!--<span class="mini-stat-icon bg-pink"><i class="fa fa-user"></i></span>-->
+            <!--<div class="mini-stat-info text-right">-->
+                <!--<span class="counter">5210</span>-->
+                <!--New Users-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+        <!--<div class="mini-stat clearfix">-->
+            <!--<span class="mini-stat-icon bg-success"><i class="fa fa-eye"></i></span>-->
+            <!--<div class="mini-stat-info text-right">-->
+                <!--<span class="counter">20544</span>-->
+                <!--Unique Visitors-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -84,7 +84,7 @@
     <div class="row">
         {% for q in questions %}
         <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title">Question {{ forloop.counter }}: {{ q.0 }}</h3></div>
+            <div class="panel-heading"><h3 class="panel-title">Question {{ forloop.counter }}: {{ q.0.0 }}</h3></div>
             <div class="panel-body">
                 <div class="form-group" >
                     {% for a in q.1 %}
@@ -170,7 +170,6 @@ confirmButtonColor: "#DD6B55",
 confirmButtonText: "OK",
 closeOnConfirm: true
 });
-        });
 {% else %}
 swal({
 title: "Sorry :( \n You did not get enough score to pass. ({{ score_percent }}%)",

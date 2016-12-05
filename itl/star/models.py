@@ -12,6 +12,7 @@ class SessionInfo(models.Model):
     read_2 = models.BooleanField(default=False)
     quiz_2 = models.BooleanField(default=False)
     quiz_2_passed = models.BooleanField(default=False)
+    interactive = models.BooleanField(default=False)
 
     answers = models.CharField(max_length=256)
 
@@ -30,6 +31,7 @@ class SessionInfo(models.Model):
             'vid_2': '#nav-vid-2',
             'read_2': '#nav-read-2',
             'quiz_2': '#nav-quiz-2',
+            'interactive': '#nav-interactive',
         }
 
         li = []
@@ -45,6 +47,8 @@ class SessionInfo(models.Model):
             li.append(id_maps['read_2'])
         if not self.quiz_2:
             li.append(id_maps['quiz_2'])
+        if not self.interactive:
+            li.append(id_maps['interactive'])
 
         return li
 

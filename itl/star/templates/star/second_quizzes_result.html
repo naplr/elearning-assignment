@@ -3,7 +3,7 @@
 
 {% block extra_css %}
 <script type="text/javascript">
-    var d = document.getElementById("nav-quiz-1");
+    var d = document.getElementById("nav-quiz-2");
     d.className += " active";
 </script>
 {% endblock %}
@@ -11,46 +11,7 @@
 {% block content %}
 
 <div style="margin-bottom: 20px">
-    <h1> Result - QUIZ: IP Address </h1>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-info"><i class="fa fa-usd"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">15852</span>
-                Total Sales
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-warning"><i class="fa fa-shopping-cart"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">956</span>
-                New Orders
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-pink"><i class="fa fa-user"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">5210</span>
-                New Users
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="mini-stat clearfix">
-            <span class="mini-stat-icon bg-success"><i class="fa fa-eye"></i></span>
-            <div class="mini-stat-info text-right">
-                <span class="counter">20544</span>
-                Unique Visitors
-            </div>
-        </div>
-    </div>
+    <h1> Result - Quiz 2</h1>
 </div>
 
 <div class="row">
@@ -140,17 +101,17 @@
         <ul class="pager">
             {% if passed %}
         <li>
-        <a href="/2">Learn More from Reading Mateirals!</a>
+        <a href="/5">Learn More from Reading Mateirals!</a>
         </li>
             <li>
-            <a href="/5">Go to Video Lesson 2<i class="fa fa-long-arrow-right"></i></a>
+            <a href="/7">Go to interactive troubleshooting activity!<i class="fa fa-long-arrow-right"></i></a>
             </li>
             {% else %}
             <li>
-            <a href="/3"><i class="fa fa-long-arrow-left"></i> Re-take the Quiz</a>
+            <a href="/6"><i class="fa fa-long-arrow-left"></i> Re-take the Quiz</a>
             </li>
             <li>
-            <a href="/2">Go to Reading Materials<i class="fa fa-long-arrow-right"></i></a>
+            <a href="/5">Go to Reading Materials<i class="fa fa-long-arrow-right"></i></a>
             </li>
             {% endif %}
         </ul>

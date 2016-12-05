@@ -79,7 +79,7 @@
             closeOnConfirm: false,
         }, function(isConfirm){   
             if (!isConfirm) {
-                window.location.href = "/4";
+                window.location.href = "/5";
             } else {
                 window.location.href = "/6";
             };
